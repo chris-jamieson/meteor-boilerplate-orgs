@@ -12,10 +12,10 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 {{ #if currentUser }}
-                    {{ > navbarAdmin }}
+                    {{ > Navbar_admin }}
 
-                    {{ > navbarOrganisation }}
-                    {{ > navbarUser }}
+                    {{ > Navbar_organisation }}
+                    {{ > Navbar_user }}
                 {{ else }}
                     <li><a href="{{ pathFor 'atSignIn' }}">Log in</a></li>
                     <li><a href="{{ pathFor 'atSignUp' }}">Sign up</a></li>
