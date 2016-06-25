@@ -1,0 +1,26 @@
+<template name="App_navigation">
+    <div class="navbar navbar-default navbar-no-rounded-corners" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{pathFor '/'}}">APP</a> <!-- TODO BOILERPLATE -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                {{ #if currentUser }}
+                    {{ > navbarAdmin }}
+
+                    {{ > navbarOrganisation }}
+                    {{ > navbarUser }}
+                {{ else }}
+                    <li><a href="{{ pathFor 'atSignIn' }}">Log in</a></li>
+                    <li><a href="{{ pathFor 'atSignUp' }}">Sign up</a></li>
+                {{ /if }}
+            </ul>
+        </div>
+    </div>
+</template>

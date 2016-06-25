@@ -1,0 +1,17 @@
+<template name="navbarUser">
+    {{> autoformModals}}
+    <li>
+        {{#afModal
+            class=""
+            collection="Meteor.users"
+            operation="update"
+            doc=currentUser._id
+            formId="updateUserForm"
+            fields="profile"
+        }}
+        Edit profile
+        {{/afModal}}
+    </li>
+    <!-- <li class="hidden-sm hidden-xs">{{ > avatar user=currentUser shape="circle" }}</li> -->
+    <li class="logout"><a class="sign-out" href="#">Log out</a></li>
+</template>
